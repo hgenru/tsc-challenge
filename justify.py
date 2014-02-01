@@ -5,13 +5,14 @@ import sys
 from argparse import ArgumentParser
 
 
+TEXT_INDENT = '\u00A0' * 4  # non-breaking space
+RE_SPLIT = '\n[ ]*\n'
+PARAGRAPH_SEPARAPOR = '\n\n'
+
+
 def justify(text, width):
     '''Split the text into paragraphs and justify it
     '''
-    TEXT_INDENT = '\u00A0' * 4  # non-breaking space
-    RE_SPLIT = '\n[ ]*\n'
-    PARAGRAPH_SEPARAPOR = '\n\n'
-
     def just(text, width):
         text = text.replace('\n', ' ').strip()
         text = TEXT_INDENT + text
