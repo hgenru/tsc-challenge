@@ -18,17 +18,16 @@ if __name__ == '__main__':
         help='output file', metavar='FILE')
     cmd_parser.add_argument(
         '-w', '--width', dest='width', default='60',
-        type='int', help='string width (default: %(default)s)',
+        type=int, help='string width (default: %(default)s)',
         metavar='NUMBER')
-    (option, args) = cmd_parser.parse_args()
+    args = cmd_parser.parse_args()
 
-    if not option.input:
-        cmd_parser.error('Input file name required')
-        cmd_parser.print_help()
+    if not args.input:
+        cmd_parser.error('Input file required')
         sys.exit(1)
 
     try:
-        with open(option.input) as in_file:
+        with open(args.input) as in_file:
             pass
     except IOError as err:
         print(err)  # hide python traceback
