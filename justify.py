@@ -11,7 +11,7 @@ def justify(text, width):
     PARAGRAPH_SEPARAPOR = '\n\n'
 
     def just(text, width):
-        text = text.replace('\n', ' ')
+        text = text.replace('\n', ' ').strip()
         text = TEXT_INDENT + text
         lines = []
         while True:
