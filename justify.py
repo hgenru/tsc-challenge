@@ -6,25 +6,21 @@ from argparse import ArgumentParser
 
 
 def justify(text, width):
-    TEXT_INDENT = '    '
+    TEXT_INDENT = '\u00A0' * 4  # non-breaking space
     RE_SPLIT = '\n[ ]*\n'
     PARAGRAPH_SEPARAPOR = '\n\n'
 
     def just(text, width):
         text = text.replace('\n', ' ')
+        text = TEXT_INDENT + text
         lines = []
         while True:
             if len(text) <= width:
-                if not lines:
-                    text = TEXT_INDENT + text
                 lines.append(text)
                 break
             chunk_end = text.rfind(' ', 0, width + 1)
-            chunk = text[0:chunk_end].strip()
+            chunk = text[0:chunk_end].strip(' ')
             chunk_words = re.split('[ ]+', chunk)
-            if not lines:
-                if chunk_words:
-                    chunk_words[0] = TEXT_INDENT + chunk_words[0]
             words_len = len(''.join(chunk_words))
             free_space_count = width - words_len
             interval_count = len(chunk_words) - 1
@@ -68,7 +64,11 @@ if __name__ == '__main__':
     try:
         with open(args.input) as in_file:
             result = justify(in_file.read(), args.width)
-            print(result)
+        if args.output:
+            with open(args.output, 'w+') as out_file:
+                out_file.write(result)
+        else:
+            sys.stdout.write(result + '\n')
     except IOError as err:
-        print(err)  # hide python traceback
+        sys.stderr.write(str(err + '\n'))  # hide python traceback
         sys.exit(1)
