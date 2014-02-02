@@ -35,9 +35,8 @@ def justify(text, width):
                 spaces_on_each = free_space_count // interval_count
                 free_space_count -= spaces_on_each * interval_count
                 if free_space_count:
-                    offset = (interval_count - free_space_count) // 2
                     while free_space_count:
-                        index = free_space_count + offset
+                        index = -free_space_count
                         chunk_words[index] += ' '
                         free_space_count -= 1
                 chunk = (' ' * spaces_on_each).join(chunk_words)
