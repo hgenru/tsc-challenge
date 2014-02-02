@@ -1,12 +1,8 @@
-Lorem ipsum
- 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua.
+О мероприятии
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse 
-cillum dolore eu fugiat nulla pariatur. 
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Яндекс открывает набор в Tolstoy Startup Camp. Это мастерская для тех, 
+кто хочет научиться запускать стартапы. За два месяца участникам мастерской 
+нужно будет с нуля создать свой проект: придумать идею, собрать команду и 
+разработать прототип. На всех этапах их будут консультировать эксперты отрасли. 
+В финале команды получат возможность представить свои проекты на 
+суд российских и зарубежных инвесторов.
